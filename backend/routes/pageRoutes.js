@@ -5,14 +5,21 @@ import path from "path";
 import { db } from "../db/database.js";
 
 pageRouter.get("/", (_req, res) => {
-    res.sendFile(path.join(process.cwd(), "pages/public/index.html"));
+    res.sendFile(path.join(process.cwd(), "pages/public/login.html"));
+});
+
+pageRouter.get("/home", isAuthenticated, (_req, res) => {
+    res.sendFile(path.join(process.cwd(), "pages/public/Home.html"));
 });
 
 pageRouter.get("/profile", (_req, res) => {
     res.sendFile(path.join(process.cwd(), "pages/public/profil.html"));
 });
 
-pageRouter.get("/liste", (_req, res) => {
+pageRouter.get("/liste", isAuthenticated, (req, res) => {
+    if (req.session?.user?.rolle !== "Admin") {
+        return res.redirect("/home?q=Ingen+tilgang");
+    }
     res.sendFile(path.join(process.cwd(), "pages/public/liste.html"));
 });
 

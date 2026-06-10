@@ -14,7 +14,7 @@ export function isAuthenticated(req, res, next) {
     const tokenHash = crypto.createHash("sha256").update(rawToken).digest("hex");
 
     const sql = `
-        SELECT Bruker.idUser, Bruker.Navn, LoginToken.ExpirationDate
+        SELECT Bruker.idUser, Bruker.Navn, Bruker.Rolle, LoginToken.ExpirationDate
         FROM LoginToken
         JOIN Bruker ON LoginToken.idUser = Bruker.idUser
         WHERE LoginToken.Token = ?`;
@@ -32,7 +32,8 @@ export function isAuthenticated(req, res, next) {
         // Fyller SessionUser-objektet
         req.session.user = {
             id: row.idUser,
-            navn: row.Brukernavn,
+            navn: row.Navn,
+            rolle: row.Rolle,
         };
         return next();
     });

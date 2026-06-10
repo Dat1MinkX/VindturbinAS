@@ -37,7 +37,7 @@ loginRouter.post("/login", (req, res) => {
             req.session.user = {
                 id: row.idUser,
                 navn: row.Navn,
-                rolle: row.RolleNavn
+                rolle: row.Rolle
             };
 
             const rawToken = crypto.randomBytes(32).toString("hex");
@@ -51,7 +51,7 @@ loginRouter.post("/login", (req, res) => {
             const expires = Date.now() + 1000 * 60 * 60 * 24 * 14;
             db.run("INSERT INTO LoginToken (Token, idUser, ExpirationDate) VALUES (?, ?, ?)", [tokenHash, row.idUser, expires]);
 
-            res.redirect("/");
+            res.redirect("/home");
         });
         return;
     });
