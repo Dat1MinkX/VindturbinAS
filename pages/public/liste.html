@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="./script/header-footer.js" defer></script>
+    <script src="./script/hent.js" defer></script>
+    <link rel="stylesheet" href="./style/base.css">
+    <link rel="icon" type="image/x-icon" href="./icon/icon.svg">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Exo+2:ital,wght@0,100..900;1,100..900&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+    <table id="bruker-liste">
+        <tr>
+            <th>Navn</th>
+            <th>Telefon</th>
+            <th>Brukernavn</th>
+        </tr>
+    </table>
+    <form id="userControls" action="/legg-til" method="POST">
+        <div class="controls">
+            <input name="name" placeholder="Navn" required>
+            <input name="phone" placeholder="Tlf" required>
+            <input name="username" placeholder="Brukernavn" required>
+
+            <select id="role">
+                <option value="Bruker">Bruker</option>
+                <option value="Moderator">Moderator</option>
+                <option value="Admin">Admin</option>
+            </select>
+
+            <button type="submit">Legg til</button>
+        </div>
+    </form>
+</body>
+
+</html>

@@ -1,0 +1,265 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   width="183.08705mm"
+   height="195.90082mm"
+   viewBox="0 0 183.08705 195.90082"
+   version="1.1"
+   id="svg1"
+   inkscape:version="1.4.2 (f4327f4, 2025-05-13)"
+   sodipodi:docname="wireframe-basic.svg"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview
+     id="namedview1"
+     pagecolor="#ffffff"
+     bordercolor="#000000"
+     borderopacity="0.25"
+     inkscape:showpageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#d1d1d1"
+     inkscape:document-units="mm"
+     inkscape:zoom="0.76167929"
+     inkscape:cx="405.02611"
+     inkscape:cy="454.91587"
+     inkscape:window-width="1920"
+     inkscape:window-height="1057"
+     inkscape:window-x="-8"
+     inkscape:window-y="-8"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="layer1" />
+  <defs
+     id="defs1">
+    <marker
+       style="overflow:visible"
+       id="ArrowTriangleStylized"
+       refX="0"
+       refY="0"
+       orient="auto-start-reverse"
+       inkscape:stockid="Stylized triangle arrow"
+       markerWidth="1"
+       markerHeight="1"
+       viewBox="0 0 1 1"
+       inkscape:isstock="true"
+       inkscape:collect="always"
+       preserveAspectRatio="xMidYMid">
+      <path
+         transform="scale(0.5)"
+         style="fill:context-stroke;fill-rule:evenodd;stroke:context-stroke;stroke-width:1pt"
+         d="m 6,0 c -3,1 -7,3 -9,5 0,0 0,-4 2,-5 -2,-1 -2,-5 -2,-5 2,2 6,4 9,5 z"
+         id="path4" />
+    </marker>
+    <marker
+       style="overflow:visible"
+       id="ArrowTriangleStylized-3"
+       refX="0"
+       refY="0"
+       orient="auto-start-reverse"
+       inkscape:stockid="Stylized triangle arrow"
+       markerWidth="1"
+       markerHeight="1"
+       viewBox="0 0 1 1"
+       inkscape:isstock="true"
+       inkscape:collect="always"
+       preserveAspectRatio="xMidYMid">
+      <path
+         transform="scale(0.5)"
+         style="fill:context-stroke;fill-rule:evenodd;stroke:context-stroke;stroke-width:1pt"
+         d="m 6,0 c -3,1 -7,3 -9,5 0,0 0,-4 2,-5 -2,-1 -2,-5 -2,-5 2,2 6,4 9,5 z"
+         id="path4-2" />
+    </marker>
+    <marker
+       style="overflow:visible"
+       id="ArrowTriangleStylized-3-1"
+       refX="0"
+       refY="0"
+       orient="auto-start-reverse"
+       inkscape:stockid="Stylized triangle arrow"
+       markerWidth="1"
+       markerHeight="1"
+       viewBox="0 0 1 1"
+       inkscape:isstock="true"
+       inkscape:collect="always"
+       preserveAspectRatio="xMidYMid">
+      <path
+         transform="scale(0.5)"
+         style="fill:context-stroke;fill-rule:evenodd;stroke:context-stroke;stroke-width:1pt"
+         d="m 6,0 c -3,1 -7,3 -9,5 0,0 0,-4 2,-5 -2,-1 -2,-5 -2,-5 2,2 6,4 9,5 z"
+         id="path4-2-3" />
+    </marker>
+  </defs>
+  <g
+     inkscape:label="Layer 1"
+     inkscape:groupmode="layer"
+     id="layer1"
+     transform="translate(0.26458299,-6.5879016)">
+    <rect
+       style="opacity:1;fill:none;stroke:#000000;stroke-width:0.529166;stroke-linecap:round;paint-order:fill markers stroke"
+       id="rect1"
+       width="71.942902"
+       height="44.46315"
+       x="0"
+       y="10.116705" />
+    <text
+       xml:space="preserve"
+       style="font-size:15.8773px;line-height:1.3;font-family:'Century Schoolbook';-inkscape-font-specification:'Century Schoolbook';text-align:start;letter-spacing:0px;word-spacing:-2.03627px;writing-mode:lr-tb;direction:ltr;text-anchor:start;opacity:1;fill:#000000;stroke-width:0.529168;stroke-linecap:round;paint-order:fill markers stroke"
+       x="8.5273666"
+       y="38.058052"
+       id="text1"><tspan
+         sodipodi:role="line"
+         id="tspan1"
+         style="fill:#000000;stroke-width:0.529168"
+         x="8.5273666"
+         y="38.058052">LOGIN</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:3.52777px;line-height:1.3;font-family:'Century Schoolbook';-inkscape-font-specification:'Century Schoolbook';text-align:start;letter-spacing:0px;word-spacing:-0.452437px;writing-mode:lr-tb;direction:ltr;text-anchor:start;opacity:1;fill:#000000;stroke-width:0.529167;stroke-linecap:round;paint-order:fill markers stroke"
+       x="-0.26457977"
+       y="9.1648273"
+       id="text2"><tspan
+         sodipodi:role="line"
+         id="tspan2"
+         style="fill:#0000ff;stroke-width:0.529167"
+         x="-0.26457977"
+         y="9.1648273">/login</tspan></text>
+    <rect
+       style="fill:none;stroke:#000000;stroke-width:0.529166;stroke-linecap:round;paint-order:fill markers stroke"
+       id="rect1-8"
+       width="71.942902"
+       height="44.46315"
+       x="110.61499"
+       y="10.753077" />
+    <text
+       xml:space="preserve"
+       style="font-size:15.8773px;line-height:1.3;font-family:'Century Schoolbook';-inkscape-font-specification:'Century Schoolbook';text-align:start;letter-spacing:0px;word-spacing:-2.03627px;writing-mode:lr-tb;direction:ltr;text-anchor:start;fill:#000000;stroke-width:0.529168;stroke-linecap:round;paint-order:fill markers stroke"
+       x="113.62244"
+       y="38.702183"
+       id="text1-2"><tspan
+         sodipodi:role="line"
+         id="tspan1-4"
+         style="fill:#000000;stroke-width:0.529168"
+         x="113.62244"
+         y="38.702183">SIGNUP</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:3.52777px;line-height:1.3;font-family:'Century Schoolbook';-inkscape-font-specification:'Century Schoolbook';text-align:start;letter-spacing:0px;word-spacing:-0.452437px;writing-mode:lr-tb;direction:ltr;text-anchor:start;fill:#000000;stroke-width:0.529167;stroke-linecap:round;paint-order:fill markers stroke"
+       x="110.3504"
+       y="9.801199"
+       id="text2-5"><tspan
+         sodipodi:role="line"
+         id="tspan2-5"
+         style="fill:#0000ff;stroke-width:0.529167"
+         x="110.3504"
+         y="9.801199">/ny-bruker</tspan></text>
+    <rect
+       style="fill:none;stroke:#000000;stroke-width:0.529166;stroke-linecap:round;paint-order:fill markers stroke"
+       id="rect1-8-5"
+       width="71.942902"
+       height="44.46315"
+       x="32.421936"
+       y="83.246239" />
+    <text
+       xml:space="preserve"
+       style="font-size:15.8773px;line-height:1.3;font-family:'Century Schoolbook';-inkscape-font-specification:'Century Schoolbook';text-align:start;letter-spacing:0px;word-spacing:-2.03627px;writing-mode:lr-tb;direction:ltr;text-anchor:start;fill:#000000;stroke-width:0.529168;stroke-linecap:round;paint-order:fill markers stroke"
+       x="43.976608"
+       y="111.19534"
+       id="text1-2-2"><tspan
+         sodipodi:role="line"
+         id="tspan1-4-7"
+         style="fill:#000000;stroke-width:0.529168"
+         x="43.976608"
+         y="111.19534">HJEM</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:3.52777px;line-height:1.3;font-family:'Century Schoolbook';-inkscape-font-specification:'Century Schoolbook';text-align:start;letter-spacing:0px;word-spacing:-0.452437px;writing-mode:lr-tb;direction:ltr;text-anchor:start;fill:#000000;stroke-width:0.529167;stroke-linecap:round;paint-order:fill markers stroke"
+       x="32.157349"
+       y="82.294357"
+       id="text2-5-6"><tspan
+         sodipodi:role="line"
+         id="tspan2-5-1"
+         style="fill:#0000ff;stroke-width:0.529167"
+         x="32.157349"
+         y="82.294357">/</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:3.52777px;line-height:1.3;font-family:'Century Schoolbook';-inkscape-font-specification:'Century Schoolbook';text-align:start;letter-spacing:0px;word-spacing:-0.452437px;writing-mode:lr-tb;direction:ltr;text-anchor:start;opacity:1;fill:#0000ff;stroke:none;stroke-width:0.529167;stroke-linecap:round;paint-order:fill markers stroke"
+       x="87.729958"
+       y="88.598061"
+       id="text3"><tspan
+         sodipodi:role="line"
+         id="tspan3"
+         style="fill:#0000ff;stroke:none;stroke-width:0.529167"
+         x="87.729958"
+         y="88.598061">/logg-ut</tspan></text>
+    <rect
+       style="fill:none;stroke:#000000;stroke-width:0.529166;stroke-linecap:round;paint-order:fill markers stroke"
+       id="rect1-8-5-1"
+       width="71.942902"
+       height="44.46315"
+       x="36.502956"
+       y="157.76099" />
+    <text
+       xml:space="preserve"
+       style="font-size:15.8773px;line-height:1.3;font-family:'Century Schoolbook';-inkscape-font-specification:'Century Schoolbook';text-align:start;letter-spacing:0px;word-spacing:-2.03627px;writing-mode:lr-tb;direction:ltr;text-anchor:start;fill:#000000;stroke-width:0.529168;stroke-linecap:round;paint-order:fill markers stroke"
+       x="41.277988"
+       y="185.7101"
+       id="text1-2-2-8"><tspan
+         sodipodi:role="line"
+         id="tspan1-4-7-9"
+         style="fill:#000000;stroke-width:0.529168"
+         x="41.277988"
+         y="185.7101">PROFIL</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:3.52777px;line-height:1.3;font-family:'Century Schoolbook';-inkscape-font-specification:'Century Schoolbook';text-align:start;letter-spacing:0px;word-spacing:-0.452437px;writing-mode:lr-tb;direction:ltr;text-anchor:start;fill:#000000;stroke-width:0.529167;stroke-linecap:round;paint-order:fill markers stroke"
+       x="36.238369"
+       y="156.80911"
+       id="text2-5-6-2"><tspan
+         sodipodi:role="line"
+         id="tspan2-5-1-7"
+         style="fill:#0000ff;stroke-width:0.529167"
+         x="36.238369"
+         y="156.80911">/profil</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:3.52777px;line-height:1.3;font-family:'Century Schoolbook';-inkscape-font-specification:'Century Schoolbook';text-align:start;letter-spacing:0px;word-spacing:-0.452437px;writing-mode:lr-tb;direction:ltr;text-anchor:start;fill:#000000;stroke-width:0.529167;stroke-linecap:round;paint-order:fill markers stroke"
+       x="67.472878"
+       y="88.41774"
+       id="text2-5-6-2-3"><tspan
+         sodipodi:role="line"
+         id="tspan2-5-1-7-3"
+         style="fill:#0000ff;stroke-width:0.529167"
+         x="67.472878"
+         y="88.41774">/profil</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:3.52777px;line-height:1.3;font-family:'Century Schoolbook';-inkscape-font-specification:'Century Schoolbook';text-align:start;letter-spacing:0px;word-spacing:-0.452437px;writing-mode:lr-tb;direction:ltr;text-anchor:start;fill:#0000ff;stroke:none;stroke-width:0.529167;stroke-linecap:round;paint-order:fill markers stroke"
+       x="91.810982"
+       y="163.11281"
+       id="text3-9"><tspan
+         sodipodi:role="line"
+         id="tspan3-5"
+         style="fill:#0000ff;stroke:none;stroke-width:0.529167"
+         x="91.810982"
+         y="163.11281">/logg-ut</tspan></text>
+    <path
+       style="opacity:1;fill:none;stroke:#ff0000;stroke-width:0.529167;stroke-linecap:round;marker-end:url(#ArrowTriangleStylized);paint-order:fill markers stroke"
+       d="m 80.337342,33.812178 19.995738,0.694738"
+       id="path3"
+       sodipodi:nodetypes="cc" />
+    <path
+       style="fill:none;stroke:#ff0000;stroke-width:0.529167;stroke-linecap:round;marker-end:url(#ArrowTriangleStylized-3);paint-order:fill markers stroke"
+       d="m 61.272026,60.720519 0.880758,15.724336"
+       id="path3-6"
+       sodipodi:nodetypes="cc" />
+    <path
+       style="fill:none;stroke:#ff0000;stroke-width:0.529167;stroke-linecap:round;marker-end:url(#ArrowTriangleStylized-3-1);paint-order:fill markers stroke"
+       d="m 69.900668,132.71359 1.22813,18.50328"
+       id="path3-6-4"
+       sodipodi:nodetypes="cc" />
+  </g>
+</svg>

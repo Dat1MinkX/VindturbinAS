@@ -1,0 +1,365 @@
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+/* Sørger for at bakgrunnen er mørk og sentrerer innholdet på skjermen */
+body {
+    background-color: #121212;
+    color: #ffffff;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    font-family: "Segoe UI", sans-serif;
+
+    background:
+        radial-gradient(circle at top left, #8b5cf6, transparent 30%),
+        radial-gradient(circle at bottom right, #2563eb, transparent 30%),
+        #020617;
+}
+
+/* Selve login-boksen */
+.login-card {
+    background-color: #1e1e1e;
+    padding: 2.5rem;
+    border-radius: 16px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.6);
+    width: 100%;
+    max-width: 420px;
+    text-align: center;
+}
+
+/* Beholder for profilbildet */
+.profile-container {
+    margin-bottom: 2rem;
+    display: flex;
+    justify-content: center;
+}
+
+/* Gjør det gigantiske bildet ditt rundt og låser størrelsen */
+.profile-img {
+    width: 160px;
+    height: 160px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 4px solid #800080;
+    /* Lilla ramme */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+/* Input-gruppene (label + input) */
+.input-group {
+    margin-bottom: 1.5rem;
+    text-align: left;
+}
+
+.input-group label {
+    display: block;
+    font-size: 0.9rem;
+    color: #b3b3b3;
+    margin-bottom: 0.5rem;
+    font-weight: 500;
+}
+
+.input-group input {
+    width: 100%;
+    padding: 0.8rem 1rem;
+    border: 1px solid #333;
+    border-radius: 8px;
+    background-color: #252525;
+    color: #fff;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+}
+
+/* Når brukeren klikker i et tekstfelt */
+.input-group input:focus {
+    outline: none;
+    border-color: #a020f0;
+    background-color: #2d2d2d;
+    box-shadow: 0 0 8px rgba(160, 32, 240, 0.4);
+}
+
+/* Logg inn-knappen */
+.btn-submit {
+    width: 100%;
+    padding: 0.9rem;
+    background-color: #800080;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.2s ease, transform 0.1s ease;
+    margin-top: 0.5rem;
+}
+
+.btn-submit:hover {
+    background-color: #a020f0;
+}
+
+.btn-submit:active {
+    transform: scale(0.98);
+}
+
+/* Lenken for å opprette bruker */
+.register-link {
+    margin-top: 2rem;
+    font-size: 0.9rem;
+}
+
+.register-link a {
+    color: #b366ff;
+    text-decoration: none;
+    transition: color 0.2s ease;
+}
+
+.register-link a:hover {
+    text-decoration: underline;
+    color: #d9b3ff;
+}
+
+.navbar {
+    display: flex;
+    gap: 20px;
+    padding: 15px 30px;
+
+    background: #1e1e1e;
+    border-radius: 12px;
+
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.4);
+}
+
+/* Links */
+.navbar a {
+    text-decoration: none;
+    color: white;
+
+    padding: 10px 16px;
+    border-radius: 8px;
+
+    transition: 0.3s ease;
+}
+
+/* Hover effect */
+.navbar a:hover {
+    background: #d9b3ff;
+    transform: translateY(-2px);
+}
+
+main {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.login-box {
+    width: 400px;
+    padding: 2rem;
+
+    background: #1e1e1e;
+    border-radius: 16px;
+
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.4);
+}
+
+.input-group {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 1rem;
+}
+
+.input-group label {
+    color: #cbd5e1;
+    margin-bottom: 0.4rem;
+}
+
+.input-group input {
+    padding: 0.8rem;
+    border: 2px solid transparent;
+    border-radius: 8px;
+
+    background: #334155;
+    color: white;
+    font-size: 1rem;
+
+    transition: 0.2s;
+}
+
+.input-group input:focus {
+    outline: none;
+    border-color: #3b82f6;
+}
+
+button {
+    width: 100%;
+    padding: 0.9rem;
+
+    border: none;
+    border-radius: 8px;
+
+    background: #b366ff;
+    color: white;
+
+    font-size: 1rem;
+    font-weight: bold;
+    cursor: pointer;
+
+    transition: 0.2s;
+}
+
+button:hover {
+    background: #d9b3ff;
+}
+
+.login-square {
+    width: 420px;
+    padding: 2rem;
+
+    background: rgba(15, 23, 42, 0.9);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 20px;
+
+    backdrop-filter: blur(12px);
+
+    box-shadow:
+        0 15px 35px rgba(0, 0, 0, 0.5),
+        0 0 30px rgba(139, 92, 246, 0.2);
+}
+
+.login-square h1 {
+    text-align: center;
+    color: white;
+    margin-bottom: 2rem;
+}
+
+.input-group {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 1rem;
+}
+
+.input-group label {
+    color: #cbd5e1;
+    margin-bottom: 6px;
+}
+
+.input-group input {
+    padding: 12px;
+
+    border: 2px solid transparent;
+    border-radius: 10px;
+
+    background: #1e293b;
+    color: white;
+
+    transition: 0.2s;
+}
+
+.input-group input:focus {
+    outline: none;
+    border-color: #8b5cf6;
+    box-shadow: 0 0 12px rgba(139, 92, 246, 0.4);
+}
+
+button {
+    width: 100%;
+    margin-top: 1rem;
+    padding: 12px;
+
+    border: none;
+    border-radius: 10px;
+
+    background: linear-gradient(135deg,
+            #8b5cf6,
+            #a855f7);
+    color: white;
+    font-size: 1rem;
+    font-weight: 600;
+
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 20px rgba(168, 85, 247, 0.35);
+}
+
+input,
+select,
+button {
+    padding: 8px;
+}
+
+table {
+    width: 60em;
+    border-collapse: collapse;
+    margin-top: 13em;
+    margin-bottom: 6rem;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+th,
+td {
+    padding: 10px;
+}
+
+td {
+    background-color: #324461;
+    text-align: center;
+    font-family: "Exo 2", sans-serif;
+    font-optical-sizing: auto;
+    font-style: normal;
+}
+
+th {
+    background-color: #1e293b;
+    font-family: "Exo 2", sans-serif;
+    font-optical-sizing: auto;
+    font-style: normal;
+}
+
+.actions button {
+    margin-right: 5px;
+}
+
+.userForm {
+    border-radius: 5rem;
+    height: 30rem;
+    width: 20rem;
+}
+
+.controls {
+    border-radius: 1.5rem;
+    padding: 30px;
+    background-color: #1e293b;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.controls input,
+.controls select {
+    background-color: #1e293b;
+    color: white;
+    border: 1px solid #333;
+    border-radius: 6px;
+    padding: 10px;
+}
+
+body:has(table) {
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    padding: 20px;
+}

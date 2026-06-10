@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="NO-nb">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Logg inn | Min side . no</title>
+    <script src="/script/header-footer.js" defer></script>
+    <link rel="stylesheet" href="style/base.css">
+    <link rel="icon" type="image/x-icon" href="./icon/icon.svg">
+</head>
+
+<body>
+    <main>
+        <form action="/ny-bruker" method="POST" class="login-box">
+            <h2>Logg Inn</h2>
+
+            <div class="input-group">
+                <label for="navn">Navn</label>
+                <input name="navn" type="text" id="navn">
+            </div>
+
+            <div class="input-group">
+                <label for="brukernavn">Brukernavn</label>
+                <input name="brukernavn" type="text" id="brukernavn">
+            </div>
+
+            <div class="input-group">
+                <label for="passord">Passord</label>
+                <input name="passord" type="password" id="passord">
+            </div>
+
+            <button type="submit">Logg deg inn!</button>
+        </form>
+    </main>
+</body>
+
+</html>

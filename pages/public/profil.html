@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="/script/header-footer.js" defer></script>
+    <script src="/script/userfile.js" defer></script>
+    <link rel="stylesheet" href="style/style.css">
+    <link rel="stylesheet" href="style/base.css">
+    <link rel="icon" type="image/x-icon" href="./icon/icon.svg">
+    <title>Profil</title>
+</head>
+
+<body>
+    <main>
+        <form action="/profile" method="POST" class="login-square">
+
+            <div class="input-group">
+                <label for="navn">Navn</label>
+                <input id="navn" name="navn" type="text">
+            </div>
+
+            <div class="input-group">
+                <label for="brukernavn">Brukernavn</label>
+                <input id="brukernavn" name="brukernavn" type="text">
+            </div>
+
+            <div class="input-group">
+                <label for="passord">Passord</label>
+                <input id="passord" name="passord" type="password">
+            </div>
+
+            <button type="submit">Logg deg inn!</button>
+
+        </form>
+    </main>
+</body>
+
+</html>

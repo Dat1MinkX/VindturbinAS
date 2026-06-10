@@ -1,0 +1,24 @@
+{
+  "name": "01-node-auth-sqlite",
+  "version": "0.0.1",
+  "description": "",
+  "main": "app.js",
+  "type": "module",
+  "scripts": {
+    "start": "node --watch app.js"
+  },
+  "repository": {
+    "type": "git"
+  },
+  "author": "fdsgwsa",
+  "license": "MIT",
+  "dependencies": {
+    "express": "^5.2.1",
+    "sqlite3": "^6.0.1"
+  },
+  "devDependencies": {
+    "bcrypt": "^6.0.0",
+    "cookie-parser": "^1.4.7",
+    "express-session": "^1.19.0"
+  }
+}
