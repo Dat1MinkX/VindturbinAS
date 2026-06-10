@@ -153,6 +153,35 @@ body {
     transform: translateY(-2px);
 }
 
+.navbar1 {
+    width: 8rem;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+
+    background: #454545;
+    border-radius: 12px;
+
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.4);
+}
+
+/* Links */
+.navbar1 a {
+    text-decoration: none;
+    color: white;
+
+    padding: 10px 16px;
+    border-radius: 8px;
+
+    transition: 0.3s ease;
+}
+
+/* Hover effect */
+.navbar1 a:hover {
+    background: #d9b3ff;
+    transform: translateY(-2px);
+}
+
 main {
     min-height: 100vh;
     display: flex;
@@ -362,4 +391,100 @@ body:has(table) {
     justify-content: flex-start;
     align-items: center;
     padding: 20px;
+}
+
+/* Containeren som ligger midt på skjermen */
+.form-container {
+    background-color: rgba(20, 20, 30, 0.7); /* Mørk, litt gjennomsiktig bakgrunn */
+    backdrop-filter: blur(10px); /* Gir en kul glass-effekt hvis du vil ha det */
+    padding: 30px;
+    border-radius: 12px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    color: #ffffff;
+    width: 100%;
+    max-width: 450px;
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.3);
+    font-family: sans-serif;
+}
+
+.form-container h2 {
+    margin-top: 0;
+    margin-bottom: 20px;
+    font-size: 22px;
+    text-align: center;
+}
+
+/* Gruppering av tekst og input */
+.input-group {
+    margin-bottom: 20px;
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+}
+
+.input-group label {
+    margin-bottom: 8px;
+    font-size: 14px;
+    color: #b3b3b3;
+}
+
+/* Styling for tekstfeltet */
+textarea {
+    background-color: #0d0d14;
+    border: 1px solid #2a2a3a;
+    border-radius: 8px;
+    padding: 12px;
+    color: #ffffff;
+    font-family: inherit;
+    resize: vertical; /* Lar brukeren justere høyden selv */
+}
+
+textarea:focus {
+    outline: none;
+    border-color: #a855f7; /* Lilla ramme når du klikker i feltet (matcher gløden din) */
+}
+
+/* Styling for filopplasting */
+input[type="file"] {
+    background-color: #0d0d14;
+    border: 1px solid #2a2a3a;
+    border-radius: 8px;
+    padding: 8px;
+    color: #b3b3b3;
+    cursor: pointer;
+}
+
+/* Gjør "Velg fil"-knappen inni feltet kulere */
+input[type="file"]::file-selector-button {
+    background-color: #3b82f6; /* Blå farge som matcher den andre gløden din */
+    color: white;
+    border: none;
+    padding: 6px 12px;
+    border-radius: 6px;
+    cursor: pointer;
+    margin-right: 10px;
+    transition: background 0.2s;
+}
+
+input[type="file"]::file-selector-button:hover {
+    background-color: #2563eb;
+}
+
+/* Knapp for å sende inn */
+.submit-btn {
+    background: linear-gradient(135deg, #a855f7, #3b82f6); /* Lilla til blå gradient */
+    color: white;
+    border: none;
+    padding: 12px;
+    border-radius: 8px;
+    font-weight: bold;
+    font-size: 16px;
+    cursor: pointer;
+    width: 100%;
+    transition: transform 0.2s, opacity 0.2s;
+}
+
+.submit-btn:hover {
+    opacity: 0.9;
+    transform: translateY(-1px);
 }

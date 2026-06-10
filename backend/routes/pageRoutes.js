@@ -5,11 +5,7 @@ import path from "path";
 import { db } from "../db/database.js";
 
 pageRouter.get("/", (_req, res) => {
-    res.sendFile(path.join(process.cwd(), "pages/public/login.html"));
-});
-
-pageRouter.get("/home", isAuthenticated, (_req, res) => {
-    res.sendFile(path.join(process.cwd(), "pages/public/Home.html"));
+    res.sendFile(path.join(process.cwd(), "pages/public/index.html"));
 });
 
 pageRouter.get("/profile", (_req, res) => {
@@ -23,8 +19,23 @@ pageRouter.get("/liste", isAuthenticated, (req, res) => {
     res.sendFile(path.join(process.cwd(), "pages/public/liste.html"));
 });
 
+pageRouter.get("/Admin", isAuthenticated, (req, res) => {
+    if (req.session?.user?.rolle !== "Admin") {
+        return res.redirect("/home?q=Ingen+tilgang");
+    }
+    res.sendFile(path.join(process.cwd(), "pages/public/Admin.html"));
+});
+
 pageRouter.get("/login", (_req, res) => {
     res.sendFile(path.join(process.cwd(), "pages/public/login.html"));
+});
+
+pageRouter.get("/home", isAuthenticated, (_req, res) => {
+    res.sendFile(path.join(process.cwd(), "pages/public/Home.html"));
+});
+
+pageRouter.get("/Soknad", isAuthenticated, (_req, res) => {
+    res.sendFile(path.join(process.cwd(), "pages/public/Soknad.html"));
 });
 
 pageRouter.get("/newUser", (_req, res) => {

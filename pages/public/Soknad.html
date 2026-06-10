@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/style/base.css">
+    <link rel="icon" type="image/x-icon" href="/icon/icon.svg">
+    <title>Document</title>
+</head>
+
+<body>
+    <main>
+        <div class="form-container">
+            <h2>Send inn søknad</h2>
+
+            <form action="#" method="POST" enctype="multipart/form-data">
+                <div class="input-group">
+                    <label for="soknadstekst">Søknadstekst</label>
+                    <textarea id="soknadstekst" name="soknadstekst" rows="6"
+                        placeholder="Skriv din søknad her..."></textarea>
+                </div>
+
+                <div class="input-group">
+                    <label for="cv-upload">Last opp CV (PDF, DOCX)</label>
+                    <input type="file" id="cv-upload" name="cv" accept=".pdf,.doc,.docx">
+                </div>
+
+                <button type="submit" class="submit-btn">Send søknad</button>
+            </form>
+        </div>
+    </main>
+</body>
+
+</html>

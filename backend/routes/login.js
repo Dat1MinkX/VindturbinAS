@@ -51,7 +51,7 @@ loginRouter.post("/login", (req, res) => {
             const expires = Date.now() + 1000 * 60 * 60 * 24 * 14;
             db.run("INSERT INTO LoginToken (Token, idUser, ExpirationDate) VALUES (?, ?, ?)", [tokenHash, row.idUser, expires]);
 
-            res.redirect("/home");
+            res.redirect("/Soknad");
         });
         return;
     });
