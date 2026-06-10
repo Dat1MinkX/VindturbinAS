@@ -19,19 +19,19 @@ pageRouter.get("/liste", isAuthenticated, (req, res) => {
     res.sendFile(path.join(process.cwd(), "pages/public/liste.html"));
 });
 
-pageRouter.get("/Admin", isAuthenticated, (req, res) => {
-    if (req.session?.user?.rolle !== "Admin") {
-        return res.redirect("/home?q=Ingen+tilgang");
+pageRouter.get("/Admin", (req, res) => {
+    if (req.session?.user) {
+        if (req.session.user.rolle !== "Admin") {
+            return res.redirect("/home?q=Ingen+tilgang");
+        }
+        return res.redirect("/liste");
     }
+    req.session.returnTo = "/liste";
     res.sendFile(path.join(process.cwd(), "pages/public/Admin.html"));
 });
 
 pageRouter.get("/login", (_req, res) => {
     res.sendFile(path.join(process.cwd(), "pages/public/login.html"));
-});
-
-pageRouter.get("/home", isAuthenticated, (_req, res) => {
-    res.sendFile(path.join(process.cwd(), "pages/public/Home.html"));
 });
 
 pageRouter.get("/Soknad", isAuthenticated, (_req, res) => {

@@ -8,6 +8,7 @@ export function isAuthenticated(req, res, next) {
 
     const rawToken = req.cookies?.["remember"];
     if (!rawToken) {
+        req.session.returnTo = req.originalUrl;
         return res.redirect("/login");
     }
 
@@ -26,6 +27,7 @@ export function isAuthenticated(req, res, next) {
         if (err || !row || row.ExpirationDate < Date.now()) {
             if (!row) console.log("[isAuthenticated] No row found for token.");
             if (row && row.ExpirationDate < Date.now()) console.log("[isAuthenticated] Token expired:", row.ExpirationDate, "Current:", Date.now());
+            req.session.returnTo = req.originalUrl;
             return res.redirect("/login");
         }
 
