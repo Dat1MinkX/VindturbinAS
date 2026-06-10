@@ -26,6 +26,8 @@
             <th>Navn</th>
             <th>Telefon</th>
             <th>Brukernavn</th>
+            <th>Rediger</th>
+            <th>Slett</th>
         </tr>
     </table>
     <form id="userControls" action="/legg-til" method="POST">
@@ -33,8 +35,9 @@
             <input name="name" placeholder="Navn" required>
             <input name="phone" placeholder="Tlf" required>
             <input name="username" placeholder="Brukernavn" required>
+            <input type="hidden" name="originalUsername" id="originalUsername" value="">
 
-            <select id="role">
+            <select id="role" name="role">
                 <option value="Bruker">Bruker</option>
                 <option value="Moderator">Moderator</option>
                 <option value="Admin">Admin</option>

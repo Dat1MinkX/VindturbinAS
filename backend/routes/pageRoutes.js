@@ -14,7 +14,7 @@ pageRouter.get("/profile", (_req, res) => {
 
 pageRouter.get("/liste", isAuthenticated, (req, res) => {
     if (req.session?.user?.rolle !== "Admin") {
-        return res.redirect("/home?q=Ingen+tilgang");
+        return res.redirect("/Admin?q=Ingen+tilgang");
     }
     res.sendFile(path.join(process.cwd(), "pages/public/liste.html"));
 });
@@ -22,7 +22,7 @@ pageRouter.get("/liste", isAuthenticated, (req, res) => {
 pageRouter.get("/Admin", (req, res) => {
     if (req.session?.user) {
         if (req.session.user.rolle !== "Admin") {
-            return res.redirect("/home?q=Ingen+tilgang");
+            return res.redirect("/Soknad?q=Ingen+tilgang");
         }
         return res.redirect("/liste");
     }
@@ -74,17 +74,36 @@ pageRouter.post("/admin-ny-bruker", (_req, res) => {
 
 pageRouter.post("/legg-til", async (req, res) => {
 
-    const { name, phone, username } = req.body;
+    const { name, phone, username, role, originalUsername } = req.body;
+    const userRole = role || "Bruker";
 
     if (!name || !username) {
         return res.redirect("/liste?q=Mangler+felt");
     }
 
+    if (originalUsername) {
+        db.run(
+            "UPDATE Bruker SET Navn = ?, TLF = ?, Brukernavn = ?, Rolle = ? WHERE Brukernavn = ?",
+            [name, phone, username, userRole, originalUsername],
+            function (err) {
+                if (err) {
+                    console.log(err);
+                    return res.redirect("/liste?q=Feil+ved+oppdatering");
+                }
+                if (this.changes === 0) {
+                    return res.redirect("/liste?q=Bruker+ikke+funnet");
+                }
+                res.redirect("/liste?q=Bruker+oppdatert");
+            }
+        );
+        return;
+    }
+
     db.get("SELECT * FROM Bruker WHERE Brukernavn = ?", [username], async (_err, row) => {
         if (row) return res.redirect("/liste?q=Eksisterer+allerede");
         db.run(
-            "INSERT INTO Bruker (Navn, TLF, Brukernavn) VALUES (?, ?, ?)",
-            [name, phone, username],
+            "INSERT INTO Bruker (Navn, TLF, Brukernavn, Rolle) VALUES (?, ?, ?, ?)",
+            [name, phone, username, userRole],
             (err) => {
                 if (err) {
                     console.log(err)

@@ -488,3 +488,23 @@ input[type="file"]::file-selector-button:hover {
     opacity: 0.9;
     transform: translateY(-1px);
 }
+
+/* Styling for tekstfelt (både navn og søknadstekst) */
+input[type="text"], textarea {
+    background-color: #0d0d14;
+    border: 1px solid #2a2a3a;
+    border-radius: 8px;
+    padding: 12px;
+    color: #ffffff;
+    font-family: inherit;
+}
+
+input[type="text"]:focus, textarea:focus {
+    outline: none;
+    border-color: #a855f7; /* Lilla ramme ved klikk */
+}
+
+/* Lar bare søknadsteksten strekkes i høyden, ikke navnefeltet */
+textarea {
+    resize: vertical;
+}
