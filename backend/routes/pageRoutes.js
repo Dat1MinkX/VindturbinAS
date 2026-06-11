@@ -32,6 +32,10 @@ pageRouter.get("/soknad", isAuthenticated, (_req, res) => {
     res.sendFile(path.join(process.cwd(), "pages/public/Soknad.html"));
 });
 
+pageRouter.get("/user", isAuthenticated, (_req, res) => {
+    res.sendFile(path.join(process.cwd(), "pages/public/bruker-profil.html"));
+});
+
 pageRouter.post("/soknad", isAuthenticated, (req, res) => {
     const { navn, tlf, soknadstekst } = req.body ?? {};
     const idUser = req.session.user.id;
@@ -146,6 +150,17 @@ pageRouter.get("/hent-brukere", (req, res) => {
     });
 });
 
+pageRouter.get("/hent-soknader", isAuthenticated, (req, res) => {
+    const idUser = req.session.user.id;
+    db.all('SELECT * FROM "Soknad" WHERE "idUser" = ?', [idUser], (err, rows) => {
+        if (err) {
+            console.error("Feil ved henting av søknader:", err);
+            return res.status(500).json({ error: "Kunne ikke hente søknader" });
+        }
+        res.json(rows || []);
+    });
+});
+
 pageRouter.post("/slett", (req, res) => {
     const { username } = req.body;
 
@@ -165,5 +180,26 @@ pageRouter.post("/slett", (req, res) => {
         }
 
         res.redirect("/liste?q=Bruker+slettet");
+    });
+});
+
+pageRouter.post("/slett-soknad", isAuthenticated, (req, res) => {
+    const { id } = req.body;
+
+    if (!id) {
+        return res.redirect("/sendt?q=Mangler+id");
+    }
+
+    db.run('DELETE FROM "Soknad" WHERE "idSoknad" = ?', [id], function (err) {
+        if (err) {
+            console.error("Feil ved sletting av søknad:", err);
+            return res.redirect("/sendt?q=Feil+ved+sletting");
+        }
+
+        if (this.changes === 0) {
+            return res.redirect("/sendt?q=Søknad+ikke+funnet");
+        }
+
+        res.redirect("/sendt?q=Søknad+slettet");
     });
 });

@@ -1,9 +1,9 @@
 async function hent() {
-    const table = document.getElementById("soknad-liste") // 1. Endret ID til tabellen
-    const data = await fetch("/hent-soknader") // 2. Endret til riktig URL
-    const soknader = await data.json(); // 3. Endret navn på variabelen
+    const table = document.getElementById("soknad-liste")
+    const data = await fetch("/hent-soknader")
+    const soknader = await data.json();
     
-    soknader.forEach(soknad => { // 4. 'user' byttet til 'soknad'
+    soknader.forEach(soknad => {
         const tableR = document.createElement("tr")
         table.appendChild(tableR)
 
@@ -12,39 +12,25 @@ async function hent() {
         const t = document.createElement("td")
         t.innerText = soknad.Tlf
         
-        const b = document.createElement("td")
-        b.innerText = soknad.Soknadstekst // 5. Byttet ut Brukernavn med Søknadstekst
+        const s = document.createElement("td")
+        s.innerText = soknad["Soknads-Tekst"]
 
-        const deleteUser = document.createElement("td")
+        const deleteSoknad = document.createElement("td")
         const f = document.createElement("form")
         f.method = "POST"
-        f.action = "/slett-soknad" // 6. URL for å slette
+        f.action = "/slett-soknad"
         const del = document.createElement("button")
         del.type = "submit"
         del.innerText = "Slett"
-        deleteUser.appendChild(f)
+        deleteSoknad.appendChild(f)
         
         const hiddenInput = document.createElement('input');
         hiddenInput.type = 'hidden';
-        hiddenInput.name = 'soknadId'; // 7. Endret fra username til id
-        hiddenInput.value = soknad.id;
+        hiddenInput.name = 'id';
+        hiddenInput.value = soknad.idSoknad;
         f.append(del, hiddenInput)
 
-        const editTd = document.createElement("td")
-        const editBtn = document.createElement("button")
-        editBtn.type = "button"
-        editBtn.innerText = "Rediger"
-        editBtn.addEventListener("click", () => {
-            // 8. Oppdatert feltene som skal fylles ut når man trykker rediger
-            document.querySelector('input[name="navn"]').value = soknad.Navn;
-            document.querySelector('input[name="tlf"]').value = soknad.Tlf;
-            document.querySelector('textarea[name="soknadstekst"]').value = soknad.Soknadstekst;
-            document.querySelector('#originalSoknadId').value = soknad.id;
-            document.querySelector('#userControls button[type="submit"]').innerText = 'Oppdater';
-        });
-        editTd.appendChild(editBtn)
-
-        tableR.append(n, t, b, editTd, deleteUser)
+        tableR.append(n, t, s, deleteSoknad)
     });
 }
 
