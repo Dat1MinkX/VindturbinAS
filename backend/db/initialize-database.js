@@ -22,6 +22,13 @@ export const databaseSchema = `
         "Username" TEXT
     );
 
+    CREATE TABLE IF NOT EXISTS "Soknad" (
+        "idSoknad" INTEGER PRIMARY KEY,
+        "Navn" TEXT,
+        "Tlf" TEXT,
+        "Soknads-Tekst" TEXT
+    );
+
 
 `;
 
