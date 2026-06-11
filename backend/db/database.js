@@ -28,6 +28,33 @@ export const db = new sqlite3.Database(dbPath, (err) => {
 
     db.run("PRAGMA foreign_keys = ON;");
 
+    db.all("PRAGMA table_info('Soknad');", [], (err, rows) => {
+        if (err) {
+            console.error("Soknad schema check error:", err);
+            return;
+        }
+
+        const existingColumns = new Set(rows.map(col => col.name));
+        const missingColumns = [
+            { name: 'idUser', sql: 'ALTER TABLE "Soknad" ADD COLUMN "idUser" INTEGER;' },
+            { name: 'Navn', sql: 'ALTER TABLE "Soknad" ADD COLUMN "Navn" TEXT;' },
+            { name: 'Tlf', sql: 'ALTER TABLE "Soknad" ADD COLUMN "Tlf" TEXT;' },
+            { name: 'Soknads-Tekst', sql: 'ALTER TABLE "Soknad" ADD COLUMN "Soknads-Tekst" TEXT;' }
+        ];
+
+        missingColumns.forEach(column => {
+            if (!existingColumns.has(column.name)) {
+                db.run(column.sql, (alterErr) => {
+                    if (alterErr) {
+                        console.error(`Could not add ${column.name} to Soknad:`, alterErr);
+                    } else {
+                        console.log(`Added ${column.name} column to Soknad table.`);
+                    }
+                });
+            }
+        });
+    });
+
     db.exec(databaseSchema, (err) => {
         if (err) {
             console.error("Schema error:", err);

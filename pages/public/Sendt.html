@@ -4,31 +4,22 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style/style.css">
-    <script src="./script/hent soknad.js" defer></script>
-    <script src="./script/header-footer copy.js" defer></script>
+    <link rel="stylesheet" href="/style/style.css">
+    <script src="/script/hent-soknad.js" defer></script>
+    <script src="/script/header-footer copy.js" defer></script>
     <title>soknad-liste</title>
 </head>
 
 <body>
 
-    <table id="soknad-liste">
+    <table id="soknad-liste" class="soknad-table">
         <tr>
             <th>Navn</th>
             <th>Telefon</th>
-            <th>Rediger</th>
+            <th>Søknadstekst</th>
             <th>Slett</th>
         </tr>
     </table>
-    <form id="userControls" action="/legg-til" method="POST">
-        <div class="controls">
-            <input name="name" placeholder="Navn" required>
-            <input name="phone" placeholder="Tlf" required>
-            <input type="hidden" name="originalUsername" id="originalUsername" value="">
-
-            <button type="submit">Legg til</button>
-        </div>
-    </form>
 </body>
 
 </html>

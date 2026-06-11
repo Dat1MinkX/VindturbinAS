@@ -144,6 +144,18 @@ table {
     overflow: hidden;
 }
 
+.soknad-table {
+    table-layout: fixed;
+    width: 40rem;
+    max-width: 100%;
+}
+
+.soknad-table td,
+.soknad-table th {
+    word-break: break-word;
+    white-space: normal;
+}
+
 th,
 td {
     padding: 10px;
