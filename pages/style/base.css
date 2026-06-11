@@ -23,34 +23,24 @@ body {
         #020617;
 }
 
-header, footer {
-    margin: 0;
-    padding: 0;
-}
-
-header:not(.site-header) {
-    display: none;
-}
-
-main, table, form {
-    flex: 1;
-    width: 100%;
-}
-
 main {
+    flex: 1;
     min-height: calc(100vh - 160px);
     display: flex;
     justify-content: center;
     align-items: center;
     padding: 2rem 1rem 3rem;
+    width: 100%;
 }
 
-table#bruker-liste, form#userControls {
-    padding: 2rem 1rem;
-    min-height: calc(100vh - 160px);
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
+header {
+    margin: 0;
+    padding: 0;
+}
+
+footer {
+    margin: 0;
+    padding: 0;
 }
 
 .site-header {
@@ -60,7 +50,8 @@ table#bruker-liste, form#userControls {
     align-items: center;
     flex-wrap: wrap;
     gap: 1rem;
-    padding: 1rem 2rem;
+    padding: 0.75rem 2rem;
+    margin: 0;
     background: rgba(15, 23, 42, 0.95);
     border-bottom: 1px solid rgba(255, 255, 255, 0.08);
     box-shadow: inset 0 -1px 0 rgba(255, 255, 255, 0.04);
@@ -100,7 +91,7 @@ table#bruker-liste, form#userControls {
 
 .site-footer {
     width: 100%;
-    padding: 1rem 2rem;
+    padding: 0.75rem 2rem;
     background: rgba(15, 23, 42, 0.95);
     color: #cbd5e1;
     border-top: 1px solid rgba(255, 255, 255, 0.08);
@@ -427,7 +418,7 @@ button {
 table {
     width: 60em;
     border-collapse: collapse;
-    margin-top: 13em;
+    margin-top: 1rem;
     margin-bottom: 6rem;
     border-radius: 10px;
     overflow: hidden;
