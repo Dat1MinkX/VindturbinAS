@@ -20,13 +20,7 @@ pageRouter.get("/liste", isAuthenticated, (req, res) => {
 });
 
 pageRouter.get("/Admin", (req, res) => {
-    if (req.session?.user) {
-        if (req.session.user.rolle !== "Admin") {
-            return res.redirect("/Soknad?q=Ingen+tilgang");
-        }
-        return res.redirect("/liste");
-    }
-    req.session.returnTo = "/liste";
+    req.session.returnTo = "/";
     res.sendFile(path.join(process.cwd(), "pages/public/Admin.html"));
 });
 
