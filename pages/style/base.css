@@ -31,19 +31,10 @@ main {
     align-items: center;
     padding: 2rem 1rem 3rem;
     width: 100%;
-<<<<<<< HEAD
-}
-
-header {
-    margin: 0;
-    padding: 0;
-}
-
-footer {
-    margin: 0;
-    padding: 0;
-=======
->>>>>>> parent of be91a8a (Fikset ruten og slettet /home)
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .site-header {
@@ -272,13 +263,6 @@ footer {
     transform: translateY(-2px);
 }
 
-main {
-    min-height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
 .login-box {
     width: 400px;
     padding: 2rem;
@@ -421,7 +405,7 @@ button {
 table {
     width: 60em;
     border-collapse: collapse;
-    margin-top: 1rem;
+    margin-top: 13em;
     margin-bottom: 6rem;
     border-radius: 10px;
     overflow: hidden;
@@ -480,10 +464,9 @@ body:has(table) {
     flex-direction: column;
     justify-content: flex-start;
     align-items: center;
-    padding: 20px;
+
 }
 
-/* Containeren som ligger midt på skjermen */
 .form-container {
     background-color: rgba(20, 20, 30, 0.7); /* Mørk, litt gjennomsiktig bakgrunn */
     backdrop-filter: blur(10px); /* Gir en kul glass-effekt hvis du vil ha det */
@@ -504,7 +487,6 @@ body:has(table) {
     text-align: center;
 }
 
-/* Gruppering av tekst og input */
 .input-group {
     margin-bottom: 20px;
     display: flex;
@@ -518,7 +500,6 @@ body:has(table) {
     color: #b3b3b3;
 }
 
-/* Styling for tekstfeltet */
 textarea {
     background-color: #0d0d14;
     border: 1px solid #2a2a3a;
@@ -526,15 +507,14 @@ textarea {
     padding: 12px;
     color: #ffffff;
     font-family: inherit;
-    resize: vertical; /* Lar brukeren justere høyden selv */
+    resize: vertical;
 }
 
 textarea:focus {
     outline: none;
-    border-color: #a855f7; /* Lilla ramme når du klikker i feltet (matcher gløden din) */
+    border-color: #a855f7;
 }
 
-/* Styling for filopplasting */
 input[type="file"] {
     background-color: #0d0d14;
     border: 1px solid #2a2a3a;
@@ -544,9 +524,8 @@ input[type="file"] {
     cursor: pointer;
 }
 
-/* Gjør "Velg fil"-knappen inni feltet kulere */
 input[type="file"]::file-selector-button {
-    background-color: #3b82f6; /* Blå farge som matcher den andre gløden din */
+    background-color: #3b82f6;
     color: white;
     border: none;
     padding: 6px 12px;
@@ -560,9 +539,8 @@ input[type="file"]::file-selector-button:hover {
     background-color: #2563eb;
 }
 
-/* Knapp for å sende inn */
 .submit-btn {
-    background: linear-gradient(135deg, #a855f7, #3b82f6); /* Lilla til blå gradient */
+    background: linear-gradient(135deg, #a855f7, #3b82f6);
     color: white;
     border: none;
     padding: 12px;
@@ -579,7 +557,6 @@ input[type="file"]::file-selector-button:hover {
     transform: translateY(-1px);
 }
 
-/* Styling for tekstfelt (både navn og søknadstekst) */
 input[type="text"], textarea {
     background-color: #0d0d14;
     border: 1px solid #2a2a3a;
@@ -591,10 +568,9 @@ input[type="text"], textarea {
 
 input[type="text"]:focus, textarea:focus {
     outline: none;
-    border-color: #a855f7; /* Lilla ramme ved klikk */
+    border-color: #a855f7;
 }
 
-/* Lar bare søknadsteksten strekkes i høyden, ikke navnefeltet */
 textarea {
     resize: vertical;
 }

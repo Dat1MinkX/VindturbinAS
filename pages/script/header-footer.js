@@ -12,6 +12,7 @@ header.innerHTML = `
         <a href="/liste">Brukerliste</a>
         <a href="/profil">Profil</a>
         <a href="/login">Logg inn</a>
+        <a href="/Sendt">Sendte søknader</a>
     </nav>
 `
 

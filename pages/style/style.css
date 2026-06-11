@@ -1,0 +1,313 @@
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+/* Sørger for at bakgrunnen er mørk og sentrerer innholdet på skjermen */
+body {
+    background-color: #121212;
+    color: #ffffff;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+
+    font-family: "Segoe UI", sans-serif;
+
+    background:
+        radial-gradient(circle at top left, #8b5cf6, transparent 30%),
+        radial-gradient(circle at bottom right, #2563eb, transparent 30%),
+        #020617;
+}
+
+main {
+    flex: 1;
+    min-height: calc(100vh - 160px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 2rem 1rem 3rem;
+    width: 100%;
+    min-height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.site-header {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 1rem;
+    padding: 0.75rem 2rem;
+    margin: 0;
+    background: rgba(15, 23, 42, 0.95);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    box-shadow: inset 0 -1px 0 rgba(255, 255, 255, 0.04);
+}
+
+.site-brand a {
+    color: #ffffff;
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 1.1rem;
+    letter-spacing: 0.02em;
+}
+
+.site-nav {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+}
+
+.site-nav a {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0.75rem 1rem;
+    border-radius: 999px;
+    color: #e5e7eb;
+    text-decoration: none;
+    background: rgba(255, 255, 255, 0.06);
+    transition: background 0.2s ease, transform 0.2s ease;
+}
+
+.site-nav a:hover,
+.site-nav a:focus-visible {
+    background: rgba(139, 92, 246, 0.25);
+    transform: translateY(-1px);
+}
+
+.site-footer {
+    margin-top: 10rem;
+    width: 100%;
+    padding: 0.75rem 2rem;
+    background: rgba(15, 23, 42, 0.95);
+    color: #cbd5e1;
+    border-top: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.footer-inner {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.25rem;
+    font-size: 0.95rem;
+}
+
+.footer-inner p {
+    margin: 0;
+    color: #d1d5db;
+}
+
+button {
+    width: 100%;
+    margin-top: 1rem;
+    padding: 12px;
+
+    border: none;
+    border-radius: 10px;
+
+    background: linear-gradient(135deg,
+            #8b5cf6,
+            #a855f7);
+    color: white;
+    font-size: 1rem;
+    font-weight: 600;
+
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 20px rgba(168, 85, 247, 0.35);
+}
+
+input,
+select,
+button {
+    padding: 8px;
+}
+
+table {
+    width: 60em;
+    border-collapse: collapse;
+    margin-top: 13em;
+    margin-bottom: 6rem;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+th,
+td {
+    padding: 10px;
+}
+
+td {
+    background-color: #324461;
+    text-align: center;
+    font-family: "Exo 2", sans-serif;
+    font-optical-sizing: auto;
+    font-style: normal;
+}
+
+th {
+    background-color: #1e293b;
+    font-family: "Exo 2", sans-serif;
+    font-optical-sizing: auto;
+    font-style: normal;
+}
+
+.actions button {
+    margin-right: 5px;
+}
+
+.userForm {
+    border-radius: 5rem;
+    height: 30rem;
+    width: 20rem;
+}
+
+.controls {
+    border-radius: 1.5rem;
+    padding: 30px;
+    background-color: #1e293b;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.controls input,
+.controls select {
+    background-color: #1e293b;
+    color: white;
+    border: 1px solid #333;
+    border-radius: 6px;
+    padding: 10px;
+}
+
+body:has(table) {
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+
+}
+
+.form-container {
+    background-color: rgba(20, 20, 30, 0.7);
+    /* Mørk, litt gjennomsiktig bakgrunn */
+    backdrop-filter: blur(10px);
+    /* Gir en kul glass-effekt hvis du vil ha det */
+    padding: 30px;
+    border-radius: 12px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    color: #ffffff;
+    width: 100%;
+    max-width: 450px;
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.3);
+    font-family: sans-serif;
+}
+
+.form-container h2 {
+    margin-top: 0;
+    margin-bottom: 20px;
+    font-size: 22px;
+    text-align: center;
+}
+
+.input-group {
+    margin-bottom: 20px;
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+}
+
+.input-group label {
+    margin-bottom: 8px;
+    font-size: 14px;
+    color: #b3b3b3;
+}
+
+textarea {
+    background-color: #0d0d14;
+    border: 1px solid #2a2a3a;
+    border-radius: 8px;
+    padding: 12px;
+    color: #ffffff;
+    font-family: inherit;
+    resize: vertical;
+}
+
+textarea:focus {
+    outline: none;
+    border-color: #a855f7;
+}
+
+input[type="file"] {
+    background-color: #0d0d14;
+    border: 1px solid #2a2a3a;
+    border-radius: 8px;
+    padding: 8px;
+    color: #b3b3b3;
+    cursor: pointer;
+}
+
+input[type="file"]::file-selector-button {
+    background-color: #3b82f6;
+    color: white;
+    border: none;
+    padding: 6px 12px;
+    border-radius: 6px;
+    cursor: pointer;
+    margin-right: 10px;
+    transition: background 0.2s;
+}
+
+input[type="file"]::file-selector-button:hover {
+    background-color: #2563eb;
+}
+
+.submit-btn {
+    background: linear-gradient(135deg, #a855f7, #3b82f6);
+    color: white;
+    border: none;
+    padding: 12px;
+    border-radius: 8px;
+    font-weight: bold;
+    font-size: 16px;
+    cursor: pointer;
+    width: 100%;
+    transition: transform 0.2s, opacity 0.2s;
+}
+
+.submit-btn:hover {
+    opacity: 0.9;
+    transform: translateY(-1px);
+}
+
+input[type="text"],
+textarea {
+    background-color: #0d0d14;
+    border: 1px solid #2a2a3a;
+    border-radius: 8px;
+    padding: 12px;
+    color: #ffffff;
+    font-family: inherit;
+}
+
+input[type="text"]:focus,
+textarea:focus {
+    outline: none;
+    border-color: #a855f7;
+}
+
+textarea {
+    resize: vertical;
+}

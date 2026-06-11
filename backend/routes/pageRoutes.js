@@ -36,6 +36,10 @@ pageRouter.get("/newUser", (_req, res) => {
     res.sendFile(path.join(process.cwd(), "pages/public/newUser.html"));
 });
 
+pageRouter.get("/sendt", (_req, res) => {
+    res.sendFile(path.join(process.cwd(), "pages/public/Sendt.html"));
+});
+
 pageRouter.post("/admin-ny-bruker", (_req, res) => {
 
     const { name, phone, username } = _req.body
