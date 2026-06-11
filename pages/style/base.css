@@ -31,6 +31,7 @@ main {
     align-items: center;
     padding: 2rem 1rem 3rem;
     width: 100%;
+<<<<<<< HEAD
 }
 
 header {
@@ -41,6 +42,8 @@ header {
 footer {
     margin: 0;
     padding: 0;
+=======
+>>>>>>> parent of be91a8a (Fikset ruten og slettet /home)
 }
 
 .site-header {

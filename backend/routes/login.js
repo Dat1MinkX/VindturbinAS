@@ -51,7 +51,7 @@ loginRouter.post("/login", (req, res) => {
             const expires = Date.now() + 1000 * 60 * 60 * 24 * 14;
             db.run("INSERT INTO LoginToken (Token, idUser, ExpirationDate) VALUES (?, ?, ?)", [tokenHash, row.idUser, expires]);
 
-            const redirectUrl = req.session.returnTo || (row.Rolle === "Admin" ? "/" : "/Soknad");
+            const redirectUrl = req.session.returnTo || (row.Rolle === "Admin" ? "/home" : "/Soknad");
             delete req.session.returnTo;
             res.redirect(redirectUrl);
         });
