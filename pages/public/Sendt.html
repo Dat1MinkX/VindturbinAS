@@ -5,7 +5,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style/style.css">
-    <script src="./script/header-footer.js" defer></script>
+    <!-- <script src="./script/header-footer.js" defer></script> -->
+    <script src="./script/header-footer copy.js" defer></script>
     <title>soknad-liste</title>
 </head>
 
@@ -15,7 +16,6 @@
         <tr>
             <th>Navn</th>
             <th>Telefon</th>
-            <th>Brukernavn</th>
             <th>Rediger</th>
             <th>Slett</th>
         </tr>
@@ -24,14 +24,7 @@
         <div class="controls">
             <input name="name" placeholder="Navn" required>
             <input name="phone" placeholder="Tlf" required>
-            <input name="username" placeholder="Brukernavn" required>
             <input type="hidden" name="originalUsername" id="originalUsername" value="">
-
-            <select id="role" name="role">
-                <option value="Bruker">Bruker</option>
-                <option value="Moderator">Moderator</option>
-                <option value="Admin">Admin</option>
-            </select>
 
             <button type="submit">Legg til</button>
         </div>
