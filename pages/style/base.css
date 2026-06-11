@@ -23,14 +23,34 @@ body {
         #020617;
 }
 
-main {
+header, footer {
+    margin: 0;
+    padding: 0;
+}
+
+header:not(.site-header) {
+    display: none;
+}
+
+main, table, form {
     flex: 1;
+    width: 100%;
+}
+
+main {
     min-height: calc(100vh - 160px);
     display: flex;
     justify-content: center;
     align-items: center;
     padding: 2rem 1rem 3rem;
-    width: 100%;
+}
+
+table#bruker-liste, form#userControls {
+    padding: 2rem 1rem;
+    min-height: calc(100vh - 160px);
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
 }
 
 .site-header {
