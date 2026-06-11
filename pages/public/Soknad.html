@@ -14,16 +14,21 @@
         <div class="form-container">
             <h2>Send inn søknad</h2>
 
-            <form action="#" method="POST" enctype="multipart/form-data">
+            <form action="/soknad" method="POST">
                 <div class="input-group">
                     <label for="navn">Ditt navn</label>
-                    <input type="text" id="navn" name="navn" placeholder="Ditt fulle navn">
+                    <input type="text" id="navn" name="navn" placeholder="Ditt fulle navn" required>
+                </div>
+
+                <div class="input-group">
+                    <label for="tlf">Telefonnummer</label>
+                    <input type="tel" id="tlf" name="tlf" placeholder="Din telefon" required>
                 </div>
 
                 <div class="input-group">
                     <label for="soknadstekst">Søknadstekst</label>
                     <textarea id="soknadstekst" name="soknadstekst" rows="6"
-                        placeholder="Skriv din søknad her..."></textarea>
+                        placeholder="Skriv din søknad her..." required></textarea>
                 </div>
 
                 <div class="input-group">

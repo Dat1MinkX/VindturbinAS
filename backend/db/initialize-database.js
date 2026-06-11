@@ -24,9 +24,11 @@ export const databaseSchema = `
 
     CREATE TABLE IF NOT EXISTS "Soknad" (
         "idSoknad" INTEGER PRIMARY KEY,
+        "idUser" INTEGER NOT NULL,
         "Navn" TEXT,
         "Tlf" TEXT,
-        "Soknads-Tekst" TEXT
+        "Soknads-Tekst" TEXT,
+        FOREIGN KEY ("idUser") REFERENCES "Bruker"("idUser") ON DELETE CASCADE
     );
 
 

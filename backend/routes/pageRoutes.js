@@ -28,8 +28,29 @@ pageRouter.get("/login", (_req, res) => {
     res.sendFile(path.join(process.cwd(), "pages/public/login.html"));
 });
 
-pageRouter.get("/Soknad", isAuthenticated, (_req, res) => {
+pageRouter.get("/soknad", isAuthenticated, (_req, res) => {
     res.sendFile(path.join(process.cwd(), "pages/public/Soknad.html"));
+});
+
+pageRouter.post("/soknad", isAuthenticated, (req, res) => {
+    const { navn, tlf, soknadstekst } = req.body ?? {};
+    const idUser = req.session.user.id;
+
+    if (!navn || !tlf || !soknadstekst) {
+        return res.redirect("/soknad?q=Mangler+felt");
+    }
+
+    db.run(
+        'INSERT INTO "Soknad" ("idUser", "Navn", "Tlf", "Soknads-Tekst") VALUES (?, ?, ?, ?)',
+        [idUser, navn, tlf, soknadstekst],
+        (err) => {
+            if (err) {
+                console.error("Feil ved lagring av søknad:", err);
+                return res.redirect("/soknad?q=Feil+ved+lagring");
+            }
+            res.redirect("/sendt");
+        }
+    );
 });
 
 pageRouter.get("/newUser", (_req, res) => {
