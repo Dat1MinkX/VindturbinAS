@@ -1,3 +1,8 @@
+/* hent soknad.js (duplicate filename with space)
+    Legacy copy — samme som hent-soknad.js. Henter og renderer søknader
+    for brukeren. Kan trygt bli konsolidert til én fil (hent-soknad.js).
+*/
+
 async function hent() {
     const table = document.getElementById("soknad-liste")
     const data = await fetch("/hent-soknader")

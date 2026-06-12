@@ -1,3 +1,7 @@
+/* header-footer-index.js
+   Variant av header-footer for index-siden. Inneholder injeksjon av
+   navigasjon og footer spesifikk for startsiden.
+*/
 const body = document.body;
 const header = document.createElement("header");
 header.className = "site-header";

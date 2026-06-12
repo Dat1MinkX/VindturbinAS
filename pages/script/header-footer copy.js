@@ -1,4 +1,9 @@
 const body = document.body;
+/* header-footer copy.js
+    Kopi av header-footer som noen sider fortsatt bruker. Inneholder
+    samme logikk for injeksjon av header og footer.
+*/
+const body = document.body;
 const header = document.createElement("header");
 header.className = "site-header";
 body.prepend(header);

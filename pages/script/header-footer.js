@@ -1,3 +1,8 @@
+/* header-footer.js
+   Setter opp felles header og footer i klienten. Brukes av flere sider
+   for å holde UI-konsistens. Scriptet injiserer HTML og eventuelle handlers.
+*/
+
 const body = document.body;
 const header = document.createElement("header");
 header.className = "site-header";

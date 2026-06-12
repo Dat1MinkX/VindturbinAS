@@ -1,3 +1,9 @@
+/* hent-soknad.js
+    Henter innsendte søknader for innlogget bruker fra `/hent-soknader`.
+    Renderer søknader i en tabell og gir mulighet til å slette en søknad
+    ved å sende POST til `/slett-soknad`.
+*/
+
 async function hent() {
     const table = document.getElementById("soknad-liste")
     const data = await fetch("/hent-soknader")
@@ -16,19 +22,28 @@ async function hent() {
         s.innerText = soknad["Soknads-Tekst"]
 
         const deleteSoknad = document.createElement("td")
-        const f = document.createElement("form")
-        f.method = "POST"
-        f.action = "/slett-soknad"
         const del = document.createElement("button")
-        del.type = "submit"
+        del.type = "button"
         del.innerText = "Slett"
-        deleteSoknad.appendChild(f)
-        
-        const hiddenInput = document.createElement('input');
-        hiddenInput.type = 'hidden';
-        hiddenInput.name = 'id';
-        hiddenInput.value = soknad.idSoknad;
-        f.append(del, hiddenInput)
+        del.addEventListener("click", async () => {
+            try {
+                const response = await fetch("/slett-soknad", {
+                    method: "POST",
+                    credentials: "same-origin",
+                    headers: { "Content-Type": "application/x-www-form-urlencoded;charset=UTF-8" },
+                    body: new URLSearchParams({ id: soknad.idSoknad })
+                });
+                if (!response.ok) {
+                    const text = await response.text();
+                    alert(`Kunne ikke slette søknad: ${response.status} ${text}`);
+                    return;
+                }
+                tableR.remove();
+            } catch (error) {
+                alert(`Feil ved sletting: ${error.message}`);
+            }
+        });
+        deleteSoknad.appendChild(del)
 
         tableR.append(n, t, s, deleteSoknad)
     });

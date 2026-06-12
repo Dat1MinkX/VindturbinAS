@@ -1,3 +1,13 @@
+/*
+    backend/routes/pageRoutes.js
+    - Definerer side-ruter og enklere API-endepunkter knyttet til sider.
+    - Server statiske sider fra `pages/public` og beskytter enkelte ruter
+        med `isAuthenticated` middleware.
+    - Inneholder endepunkter for å hente og endre brukere og søknader
+        (f.eks. `/hent-brukere`, `/legg-til`, `/slett`, `/hent-soknader`,
+        `/slett-soknad`, og `POST /soknad`).
+    Kort og konsist kommentar forklarer hensikten med denne filen.
+*/
 import { Router } from "express";
 export const pageRouter = Router();
 import { isAuthenticated } from "../middleware/isAuthenticated.js";

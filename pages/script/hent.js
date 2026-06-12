@@ -1,4 +1,8 @@
-
+/* hent.js
+    Henter brukerliste fra backend (`/hent-brukere`) og renderer en
+    tabell med navnet, telefon og brukernavn. Legger også til rediger/
+    slett-knapper som bruker vanlige HTML-former (POST) for handlinger.
+*/
 
 async function hent() {
     const table = document.getElementById("bruker-liste")
