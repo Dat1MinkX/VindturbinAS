@@ -22,6 +22,10 @@ pageRouter.get("/profile", (_req, res) => {
     res.sendFile(path.join(process.cwd(), "pages/public/profil.html"));
 });
 
+pageRouter.get("/brukere", (_req, res) => {
+    res.sendFile(path.join(process.cwd(), "pages/public/bruker-profil.html"));
+});
+
 pageRouter.get("/liste", isAuthenticated, (req, res) => {
     if (req.session?.user?.rolle !== "Admin") {
         return res.redirect("/Admin?q=Ingen+tilgang");
@@ -162,12 +166,20 @@ pageRouter.get("/hent-brukere", (req, res) => {
 
 pageRouter.get("/hent-soknader", isAuthenticated, (req, res) => {
     const idUser = req.session.user.id;
-    db.all('SELECT * FROM "Soknad" WHERE "idUser" = ?', [idUser], (err, rows) => {
+    db.all('SELECT rowid, * FROM "Soknad" WHERE "idUser" = ?', [idUser], (err, rows) => {
         if (err) {
             console.error("Feil ved henting av søknader:", err);
             return res.status(500).json({ error: "Kunne ikke hente søknader" });
         }
-        res.json(rows || []);
+
+        // Normalize each row so client always receives a numeric `idSoknad` field.
+        const normalized = (rows || []).map(r => {
+            const idVal = r.idSoknad ?? r.id ?? r.rowid ?? null;
+            return { ...r, idSoknad: Number.isInteger(idVal) ? idVal : (idVal ? Number(idVal) : null) };
+        });
+
+        console.log(`Returnerer ${normalized.length} soknader for bruker=${idUser}:`, normalized);
+        res.json(normalized);
     });
 });
 
@@ -197,19 +209,36 @@ pageRouter.post("/slett-soknad", isAuthenticated, (req, res) => {
     const { id } = req.body;
 
     if (!id) {
-        return res.redirect("/sendt?q=Mangler+id");
+        return res.status(400).json({ error: "Mangler id" });
     }
 
-    db.run('DELETE FROM "Soknad" WHERE "idSoknad" = ?', [id], function (err) {
-        if (err) {
-            console.error("Feil ved sletting av søknad:", err);
-            return res.redirect("/sendt?q=Feil+ved+sletting");
-        }
+    const numericId = Number(id);
+    if (!Number.isInteger(numericId)) {
+        console.log(`Ugyldig id for sletting: ${id}`);
+        return res.status(400).json({ error: "Ugyldig id" });
+    }
 
-        if (this.changes === 0) {
-            return res.redirect("/sendt?q=Søknad+ikke+funnet");
+    console.log(`Slett søknad forespørsel for id=${numericId}, bruker=${req.session?.user?.id}`);
+    db.get('SELECT * FROM "Soknad" WHERE "idSoknad" = ?', [numericId], (getErr, row) => {
+        if (getErr) {
+            console.error("Feil ved lookup før sletting:", getErr);
+            return res.status(500).json({ error: "Feil ved sletting" });
         }
+        console.log("Rad før sletting:", row);
 
-        res.redirect("/sendt?q=Søknad+slettet");
+        // Try deleting by idSoknad, but fall back to rowid if idSoknad is NULL
+        db.run('DELETE FROM "Soknad" WHERE COALESCE("idSoknad", rowid) = ?', [numericId], function (err) {
+            if (err) {
+                console.error("Feil ved sletting av søknad:", err);
+                return res.status(500).json({ error: "Feil ved sletting" });
+            }
+
+            console.log(`Slettet rader: ${this.changes}`);
+            if (this.changes === 0) {
+                return res.status(404).json({ error: "Søknad ikke funnet" });
+            }
+
+            return res.json({ success: true });
+        });
     });
 });

@@ -1,6 +1,7 @@
-/* header-footer-index.js
-   Variant av header-footer for index-siden. Inneholder injeksjon av
-   navigasjon og footer spesifikk for startsiden.
+const body = document.body;
+/* header-footer copy.js
+    Kopi av header-footer som noen sider fortsatt bruker. Inneholder
+    samme logikk for injeksjon av header og footer.
 */
 const body = document.body;
 const header = document.createElement("header");
@@ -12,9 +13,9 @@ header.innerHTML = `
         <a href="/">VindturbinAS</a>
     </div>
     <nav class="site-nav">
+        <a href="/">Hjem</a>
         <a href="/liste">Brukerliste</a>
-        <a href="/Sendt">Sendte søknader</a>
-        <a href="/brukere"Brukere</a>
+
     </nav>
 `
 

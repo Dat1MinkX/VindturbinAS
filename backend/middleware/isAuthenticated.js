@@ -6,9 +6,13 @@ export function isAuthenticated(req, res, next) {
         return next();
     }
 
+    // If no session user, try remember cookie. If neither, handle AJAX vs regular browser.
     const rawToken = req.cookies?.["remember"];
     if (!rawToken) {
         req.session.returnTo = req.originalUrl;
+        // Detect AJAX/fetch by header and respond with JSON status instead of redirect
+        const acceptsJson = req.headers["x-requested-with"] === "XMLHttpRequest" || (req.headers.accept || "").includes("application/json");
+        if (acceptsJson) return res.status(401).json({ error: "Unauthorized" });
         return res.redirect("/login");
     }
 
@@ -28,6 +32,8 @@ export function isAuthenticated(req, res, next) {
             if (!row) console.log("[isAuthenticated] No row found for token.");
             if (row && row.ExpirationDate < Date.now()) console.log("[isAuthenticated] Token expired:", row.ExpirationDate, "Current:", Date.now());
             req.session.returnTo = req.originalUrl;
+            const acceptsJson = req.headers["x-requested-with"] === "XMLHttpRequest" || (req.headers.accept || "").includes("application/json");
+            if (acceptsJson) return res.status(401).json({ error: "Unauthorized" });
             return res.redirect("/login");
         }
 

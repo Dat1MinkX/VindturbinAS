@@ -323,3 +323,109 @@ textarea:focus {
 textarea {
     resize: vertical;
 }
+
+.container {
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+/* Stil for brukerinformasjon */
+.profile-card {
+    background: #ffffff;
+    border-radius: 8px;
+    padding: 25px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+    margin-bottom: 30px;
+    display: flex;
+    align-items: center;
+    gap: 25px;
+}
+
+.avatar {
+    width: 80px;
+    height: 80px;
+    background-color: #0056b3;
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 32px;
+    font-weight: bold;
+}
+
+.user-details h2 {
+    margin: 0 0 8px 0;
+    color: #222;
+}
+
+.user-details p {
+    margin: 4px 0;
+    color: #555;
+    font-size: 15px;
+}
+
+/* Stil for søknadsoversikt */
+.applications-section {
+    background: #ffffff;
+    border-radius: 8px;
+    padding: 25px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+}
+
+.applications-section h3 {
+    margin-top: 0;
+    margin-bottom: 20px;
+    color: #222;
+    border-bottom: 2px solid #f0f0f0;
+    padding-bottom: 10px;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    text-align: left;
+}
+
+th,
+td {
+    padding: 14px 16px;
+    border-bottom: 1px solid #eef0f2;
+}
+
+th {
+    background-color: #f8f9fa;
+    color: #666;
+    font-weight: 600;
+    text-transform: uppercase;
+    font-size: 13px;
+    letter-spacing: 0.5px;
+}
+
+tr:hover {
+    background-color: #fcfdfe;
+}
+
+/* Statustagger (visuelle indikatorer) */
+.status {
+    padding: 6px 12px;
+    border-radius: 20px;
+    font-size: 13px;
+    font-weight: 500;
+    display: inline-block;
+}
+
+.status.sent {
+    background-color: #e3f2fd;
+    color: #0d47a1;
+}
+
+.status.processing {
+    background-color: #fff3e0;
+    color: #e65100;
+}
+
+.status.interview {
+    background-color: #e8f5e9;
+    color: #1b5e20;
+}   

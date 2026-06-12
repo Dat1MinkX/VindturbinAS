@@ -27,18 +27,34 @@ async function hent() {
         del.innerText = "Slett"
         del.addEventListener("click", async () => {
             try {
+                // Derive id from possible column names and coerce to integer
+                const rawId = soknad.idSoknad ?? soknad.id ?? soknad.ID ?? soknad["idSoknad"];
+                const idToSend = Number(rawId);
+                if (!rawId || !Number.isInteger(idToSend)) {
+                    alert(`Ugyldig id for sletting: ${JSON.stringify(rawId)}`);
+                    return;
+                }
+
                 const response = await fetch("/slett-soknad", {
                     method: "POST",
                     credentials: "same-origin",
-                    headers: { "Content-Type": "application/x-www-form-urlencoded;charset=UTF-8" },
-                    body: new URLSearchParams({ id: soknad.idSoknad })
+                    headers: {
+                        "Content-Type": "application/x-www-form-urlencoded;charset=UTF-8",
+                        "X-Requested-With": "XMLHttpRequest" // mark as AJAX for middleware
+                    },
+                    body: new URLSearchParams({ id: String(idToSend) })
                 });
+                const result = await response.json().catch(() => null);
                 if (!response.ok) {
-                    const text = await response.text();
-                    alert(`Kunne ikke slette søknad: ${response.status} ${text}`);
+                    const errMsg = result?.error || JSON.stringify(result) || await response.text();
+                    alert(`Kunne ikke slette søknad: ${response.status} ${errMsg}`);
                     return;
                 }
-                tableR.remove();
+                if (result && result.success) {
+                    tableR.remove();
+                } else {
+                    alert(`Sletting mislyktes: ${JSON.stringify(result)}`);
+                }
             } catch (error) {
                 alert(`Feil ved sletting: ${error.message}`);
             }

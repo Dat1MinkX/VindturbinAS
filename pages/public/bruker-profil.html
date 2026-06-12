@@ -10,14 +10,60 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="./script/header-footer-index.js" defer></script>
     <script src="./script/hent soknad" defer></script>
-    <link rel="stylesheet" href="./style/base.css">
+    <link rel="stylesheet" href="./style/style.css">
     <link rel="icon" type="image/x-icon" href="./icon/icon.svg">
     <title>Document</title>
 </head>
 
 <body>
     <main>
-        
+        <div class="container">
+
+            <div class="profile-card">
+                <div class="avatar">OH</div>
+                <div class="user-details">
+                    <h2>Ola Nordmann</h2>
+                    <p><strong>E-post:</strong> ola.nordmann@eksempel.no</p>
+                    <p><strong>Telefon:</strong> +47 99 88 77 66</p>
+                    <p><strong>Brukertype:</strong> Jobbsøker</p>
+                </div>
+            </div>
+
+            <div class="applications-section">
+                <h3>Mine sendte søknader</h3>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Stilling / Rolle</th>
+                            <th>Bedrift</th>
+                            <th>Dato sendt</th>
+                            <th>Status</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>Frontend-utvikler</strong></td>
+                            <td>Tech-Selskapet AS</td>
+                            <td>10.06.2026</td>
+                            <td><span class="status processing">Til behandling</span></td>
+                        </tr>
+                        <tr>
+                            <td><strong>UX Designer</strong></td>
+                            <td>Designbyrået AS</td>
+                            <td>05.06.2026</td>
+                            <td><span class="status interview">Intervju satt opp</span></td>
+                        </tr>
+                        <tr>
+                            <td><strong>Fullstack-utvikler</strong></td>
+                            <td>Innovasjon Norge</td>
+                            <td>28.05.2026</td>
+                            <td><span class="status sent">Sendt</span></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+        </div>
     </main>
 </body>
 
