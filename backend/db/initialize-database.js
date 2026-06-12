@@ -28,6 +28,7 @@ export const databaseSchema = `
         "Navn" TEXT,
         "Tlf" TEXT,
         "Soknads-Tekst" TEXT,
+        "om-deg" TEXT,
         FOREIGN KEY ("idUser") REFERENCES "Bruker"("idUser") ON DELETE CASCADE
     );
 

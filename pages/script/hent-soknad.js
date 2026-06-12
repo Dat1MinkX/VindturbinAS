@@ -21,6 +21,9 @@ async function hent() {
         const s = document.createElement("td")
         s.innerText = soknad["Soknads-Tekst"]
 
+        const g = document.createElement("td")
+        g.innerText = soknad["om-deg"]
+
         const deleteSoknad = document.createElement("td")
         const del = document.createElement("button")
         del.type = "button"
@@ -61,7 +64,7 @@ async function hent() {
         });
         deleteSoknad.appendChild(del)
 
-        tableR.append(n, t, s, deleteSoknad)
+        tableR.append(n, t, s, g, deleteSoknad)
     });
 }
 

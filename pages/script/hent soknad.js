@@ -20,6 +20,9 @@ async function hent() {
         const s = document.createElement("td")
         s.innerText = soknad["Soknads-Tekst"]
 
+        const g = document.createElement("td")
+        g.innerText = soknad["om-deg"]
+
         const deleteSoknad = document.createElement("td")
         const f = document.createElement("form")
         f.method = "POST"
@@ -33,9 +36,10 @@ async function hent() {
         hiddenInput.type = 'hidden';
         hiddenInput.name = 'id';
         hiddenInput.value = soknad.idSoknad;
+        hiddenInput.value = soknad.om-deg;
         f.append(del, hiddenInput)
 
-        tableR.append(n, t, s, deleteSoknad)
+        tableR.append(n, t, s, g, deleteSoknad)
     });
 }
 
